@@ -7,14 +7,14 @@ void str_copy(char* addr_a, char* addr_b);
 
 int main(int argc, char* argv[])
 {
-    printf("Enter string A: ");
+    printf("Enter string: ");
     char* original = GetString();
     char* duplicate = original;
 
     str_copy(original, duplicate);
 
-    int len = str_len(original);
-    printf("%s len: %i\n", original, len);
+    printf("Original: %s \n", original);
+    printf("Duplicate: %s \n\n", duplicate);
 }
 
 int str_len(char* addr)
@@ -29,5 +29,7 @@ int str_len(char* addr)
 
 void str_copy(char* addr_a, char* addr_b)
 {
-
+    printf("\nCopying...\n");
+    int len = str_len(addr_a);
+    addr_b = malloc(len * sizeof(char));
 }
