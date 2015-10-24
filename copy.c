@@ -35,7 +35,12 @@ char* str_copy(char* addr_a)
 {
     printf("\nCopying string \"%s\"...\n", addr_a);
     int len = str_len(addr_a);
+    // initialize new pointer
     char* addr_b = malloc(len * sizeof(char));
+    for (int i = 0; i < len; i++)
+    {
+        *(addr_b + i) = *(addr_a) + i;
+    }
     return addr_b;
 }
 
