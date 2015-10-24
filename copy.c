@@ -8,9 +8,13 @@ void str_copy(char* addr_a, char* addr_b);
 int main(int argc, char* argv[])
 {
     printf("Enter string A: ");
-    char* input = GetString();
-    int len = str_len(input);
-    printf("%s len: %i\n", input, len);
+    char* original = GetString();
+    char* duplicate = original;
+
+    str_copy(original, duplicate);
+
+    int len = str_len(original);
+    printf("%s len: %i\n", original, len);
 }
 
 int str_len(char* addr)
@@ -21,4 +25,9 @@ int str_len(char* addr)
         len++;
     }
     return len;
+}
+
+void str_copy(char* addr_a, char* addr_b)
+{
+
 }
