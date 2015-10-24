@@ -8,17 +8,24 @@ void str_destroy(char* addr);
 
 int main(int argc, char* argv[])
 {
-    printf("Enter string: ");
-    char* original = GetString();
+    char* original;
+    // repeatedly prompt for string
+    do
+    {
+        printf("Enter string: ");
+        original = GetString();
+    }
+    while (original == NULL || str_len(original) == 0);
+
     char* duplicate = str_copy(original);
 
-    printf("Original: %s \n", original);
-    printf("Duplicate: %s \n\n", duplicate);
+    printf("    Original: %s \n", original);
+    printf("    Duplicate: %s \n", duplicate);
 
     str_destroy(original);
 
-    printf("Original: %s \n", original);
-    printf("Duplicate: %s \n\n", duplicate);
+    printf("    Original: %s \n", original);
+    printf("    Duplicate: %s \n\n", duplicate);
 }
 
 int str_len(char* addr)
