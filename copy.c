@@ -39,7 +39,7 @@ char* str_copy(char* addr_a)
     char* addr_b = malloc(len * sizeof(char));
     for (int i = 0; i < len; i++)
     {
-        *(addr_b + i) = *(addr_a) + i;
+        *(addr_b + i) = *(addr_a + i);
     }
     return addr_b;
 }
