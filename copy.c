@@ -3,16 +3,14 @@
 
 // function prototypes
 int str_len(char* addr);
-void str_copy(char* addr_a, char* addr_b);
+char* str_copy(char* addr_a);
 void str_destroy(char* addr);
 
 int main(int argc, char* argv[])
 {
     printf("Enter string: ");
     char* original = GetString();
-    char* duplicate = original;
-
-    str_copy(original, duplicate);
+    char* duplicate = str_copy(original);
 
     printf("Original: %s \n", original);
     printf("Duplicate: %s \n\n", duplicate);
@@ -33,11 +31,12 @@ int str_len(char* addr)
     return len;
 }
 
-void str_copy(char* addr_a, char* addr_b)
+char* str_copy(char* addr_a)
 {
     printf("\nCopying string \"%s\"...\n", addr_a);
     int len = str_len(addr_a);
-    addr_b = malloc(len * sizeof(char));
+    char* addr_b = malloc(len * sizeof(char));
+    return addr_b;
 }
 
 void str_destroy(char* addr)
