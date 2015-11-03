@@ -4,7 +4,7 @@
 // function prototypes
 int str_len(char* addr);
 char* str_copy(char* addr_a);
-void str_destroy(char* addr);
+void str_overwrite(char* addr);
 
 int main(int argc, char* argv[])
 {
@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
     printf("    Original: %s \n", original);
     printf("    Duplicate: %s \n", duplicate);
 
-    str_destroy(original);
+    str_overwrite(original);
 
     printf("    Original: %s \n", original);
     printf("    Duplicate: %s \n\n", duplicate);
@@ -51,7 +51,7 @@ char* str_copy(char* addr_a)
     return addr_b;
 }
 
-void str_destroy(char* addr)
+void str_overwrite(char* addr)
 {
     printf("\nDestroying string \"%s\"...\n", addr);
     int len = str_len(addr);
